@@ -72,11 +72,11 @@
     <Compile Include="Libraries\Database.cs" />
     <Compile Include="Libraries\DbControls.cs" />
     <Compile Include="Libraries\Navigation.cs" />
-    <Compile Include="Main.cs">
+    <Compile Include="AddressBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Main.Designer.cs">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="AddressBook.Designer.cs">
+      <DependentUpon>AddressBook.cs</DependentUpon>
     </Compile>
     <Compile Include="NewAddress.cs">
       <SubType>Form</SubType>
@@ -86,8 +86,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Main.resx">
-      <DependentUpon>Main.cs</DependentUpon>
+    <Compile Include="Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewAddress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewAddress.Designer.cs">
+      <DependentUpon>ViewAddress.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddressBook.resx">
+      <DependentUpon>AddressBook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewAddress.resx">
       <DependentUpon>NewAddress.cs</DependentUpon>
@@ -101,8 +113,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewAddress.resx">
+      <DependentUpon>ViewAddress.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bin\Debug\AddessBook_V1.exe.config" />
-    <None Include="bin\Debug\database.sqlite3" />
+    <None Include="bin\Debug\AddressBookDB.sqlite3" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

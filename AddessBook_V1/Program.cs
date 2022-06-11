@@ -17,7 +17,7 @@ namespace AddessBook_V1
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new AddressBook());
         }
     }
 }

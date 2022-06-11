@@ -1,30 +1,38 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data.SQLite;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AddessBook_V1.Libraries
 {
     public class Database
     {
-      
-        public Database()
-        {            
-                SQLiteConnection conn = new SQLiteConnection("Data Source=database.sqlite3");
 
-                if (!File.Exists("./database.sqlite3"))
-                {
-                    SQLiteConnection.CreateFile("database.sqlite3");
-                    Console.WriteLine("Database Created");
-                }
-                else
-                {
-                    Console.WriteLine("db already exists");
-                }
-           
+        public Database()
+        {
+            SQLiteConnection conn = new SQLiteConnection("Data Source=AddressBookDB.sqlite3");
+
+            if (!File.Exists("./AddressBookDB.sqlite3"))
+            {
+                SQLiteConnection.CreateFile("AddressBookDB.sqlite3");
+                Console.WriteLine("Database Created");
+
+                conn.Open();
+                string tbl = "create TABLE AddressBook (ID integer primary key AUTOINCREMENT, FirstName text, LastName text, Address1 text, " +
+                    "Address2 text, City text, State text, Zipcode text, PhoneNumber text)";
+                SQLiteCommand command = new SQLiteCommand(tbl, conn);
+                command.ExecuteNonQuery();
+                conn.Close();
+
+                Console.WriteLine("Table Created");
+
+            }
+            else
+            {
+                Console.WriteLine("db already exists");
+            }
+
+
+
         }
     }
 }
