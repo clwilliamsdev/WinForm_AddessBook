@@ -72,7 +72,9 @@ namespace AddessBook_V1
 
         private void SettingsBtn_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Settings settings = new Settings();
+            settings.ShowDialog();
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)

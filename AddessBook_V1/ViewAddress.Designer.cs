@@ -62,7 +62,7 @@
             this.UpdateBtn.Location = new System.Drawing.Point(34, 377);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(75, 33);
-            this.UpdateBtn.TabIndex = 27;
+            this.UpdateBtn.TabIndex = 9;
             this.UpdateBtn.Text = "Update";
             this.UpdateBtn.UseVisualStyleBackColor = false;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
@@ -94,7 +94,7 @@
             this.PhoneInput.Location = new System.Drawing.Point(117, 308);
             this.PhoneInput.Name = "PhoneInput";
             this.PhoneInput.Size = new System.Drawing.Size(201, 22);
-            this.PhoneInput.TabIndex = 62;
+            this.PhoneInput.TabIndex = 8;
             // 
             // label8
             // 
@@ -112,7 +112,7 @@
             this.ZipInput.Location = new System.Drawing.Point(235, 279);
             this.ZipInput.Name = "ZipInput";
             this.ZipInput.Size = new System.Drawing.Size(83, 22);
-            this.ZipInput.TabIndex = 60;
+            this.ZipInput.TabIndex = 7;
             // 
             // label7
             // 
@@ -130,7 +130,7 @@
             this.StateInput.Location = new System.Drawing.Point(84, 280);
             this.StateInput.Name = "StateInput";
             this.StateInput.Size = new System.Drawing.Size(42, 22);
-            this.StateInput.TabIndex = 58;
+            this.StateInput.TabIndex = 6;
             // 
             // label6
             // 
@@ -148,7 +148,7 @@
             this.CityInput.Location = new System.Drawing.Point(117, 252);
             this.CityInput.Name = "CityInput";
             this.CityInput.Size = new System.Drawing.Size(201, 22);
-            this.CityInput.TabIndex = 56;
+            this.CityInput.TabIndex = 5;
             // 
             // label5
             // 
@@ -166,7 +166,7 @@
             this.Address2Input.Location = new System.Drawing.Point(117, 224);
             this.Address2Input.Name = "Address2Input";
             this.Address2Input.Size = new System.Drawing.Size(201, 22);
-            this.Address2Input.TabIndex = 54;
+            this.Address2Input.TabIndex = 4;
             // 
             // label4
             // 
@@ -184,7 +184,7 @@
             this.LastNameInput.Location = new System.Drawing.Point(117, 168);
             this.LastNameInput.Name = "LastNameInput";
             this.LastNameInput.Size = new System.Drawing.Size(201, 22);
-            this.LastNameInput.TabIndex = 52;
+            this.LastNameInput.TabIndex = 2;
             // 
             // label3
             // 
@@ -202,7 +202,7 @@
             this.Address1Input.Location = new System.Drawing.Point(117, 196);
             this.Address1Input.Name = "Address1Input";
             this.Address1Input.Size = new System.Drawing.Size(201, 22);
-            this.Address1Input.TabIndex = 50;
+            this.Address1Input.TabIndex = 3;
             // 
             // label10
             // 
@@ -225,7 +225,7 @@
             this.ExitBtn.Location = new System.Drawing.Point(270, 41);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(48, 33);
-            this.ExitBtn.TabIndex = 48;
+            this.ExitBtn.TabIndex = 11;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
@@ -241,7 +241,7 @@
             this.BackBtn.Location = new System.Drawing.Point(212, 377);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 33);
-            this.BackBtn.TabIndex = 47;
+            this.BackBtn.TabIndex = 10;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = false;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
@@ -252,7 +252,7 @@
             this.FirstNameInput.Location = new System.Drawing.Point(117, 140);
             this.FirstNameInput.Name = "FirstNameInput";
             this.FirstNameInput.Size = new System.Drawing.Size(201, 22);
-            this.FirstNameInput.TabIndex = 46;
+            this.FirstNameInput.TabIndex = 1;
             // 
             // label11
             // 

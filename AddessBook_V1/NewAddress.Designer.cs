@@ -61,7 +61,7 @@
             this.ExitBtn.Location = new System.Drawing.Point(273, 41);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(48, 33);
-            this.ExitBtn.TabIndex = 28;
+            this.ExitBtn.TabIndex = 11;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
@@ -77,7 +77,7 @@
             this.BackBtn.Location = new System.Drawing.Point(215, 377);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 33);
-            this.BackBtn.TabIndex = 27;
+            this.BackBtn.TabIndex = 10;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = false;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
@@ -88,7 +88,7 @@
             this.FirstNameInput.Location = new System.Drawing.Point(120, 140);
             this.FirstNameInput.Name = "FirstNameInput";
             this.FirstNameInput.Size = new System.Drawing.Size(201, 22);
-            this.FirstNameInput.TabIndex = 24;
+            this.FirstNameInput.TabIndex = 1;
             // 
             // label1
             // 
@@ -111,7 +111,7 @@
             this.SaveBtn.Location = new System.Drawing.Point(39, 377);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 33);
-            this.SaveBtn.TabIndex = 22;
+            this.SaveBtn.TabIndex = 9;
             this.SaveBtn.Text = "Save";
             this.SaveBtn.UseVisualStyleBackColor = false;
             this.SaveBtn.Click += new System.EventHandler(this.SaveBtn_Click);
@@ -122,7 +122,7 @@
             this.Address1Input.Location = new System.Drawing.Point(120, 196);
             this.Address1Input.Name = "Address1Input";
             this.Address1Input.Size = new System.Drawing.Size(201, 22);
-            this.Address1Input.TabIndex = 30;
+            this.Address1Input.TabIndex = 3;
             // 
             // label2
             // 
@@ -140,7 +140,7 @@
             this.LastNameInput.Location = new System.Drawing.Point(120, 168);
             this.LastNameInput.Name = "LastNameInput";
             this.LastNameInput.Size = new System.Drawing.Size(201, 22);
-            this.LastNameInput.TabIndex = 32;
+            this.LastNameInput.TabIndex = 2;
             // 
             // label3
             // 
@@ -158,7 +158,7 @@
             this.Address2Input.Location = new System.Drawing.Point(120, 224);
             this.Address2Input.Name = "Address2Input";
             this.Address2Input.Size = new System.Drawing.Size(201, 22);
-            this.Address2Input.TabIndex = 34;
+            this.Address2Input.TabIndex = 4;
             // 
             // label4
             // 
@@ -176,7 +176,7 @@
             this.CityInput.Location = new System.Drawing.Point(120, 252);
             this.CityInput.Name = "CityInput";
             this.CityInput.Size = new System.Drawing.Size(201, 22);
-            this.CityInput.TabIndex = 36;
+            this.CityInput.TabIndex = 5;
             // 
             // label5
             // 
@@ -194,7 +194,7 @@
             this.StateInput.Location = new System.Drawing.Point(87, 280);
             this.StateInput.Name = "StateInput";
             this.StateInput.Size = new System.Drawing.Size(42, 22);
-            this.StateInput.TabIndex = 38;
+            this.StateInput.TabIndex = 6;
             // 
             // label6
             // 
@@ -212,7 +212,7 @@
             this.ZipInput.Location = new System.Drawing.Point(238, 279);
             this.ZipInput.Name = "ZipInput";
             this.ZipInput.Size = new System.Drawing.Size(83, 22);
-            this.ZipInput.TabIndex = 40;
+            this.ZipInput.TabIndex = 7;
             // 
             // label7
             // 
@@ -230,7 +230,7 @@
             this.PhoneInput.Location = new System.Drawing.Point(120, 308);
             this.PhoneInput.Name = "PhoneInput";
             this.PhoneInput.Size = new System.Drawing.Size(201, 22);
-            this.PhoneInput.TabIndex = 42;
+            this.PhoneInput.TabIndex = 8;
             // 
             // label8
             // 

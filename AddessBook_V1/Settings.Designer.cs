@@ -31,7 +31,7 @@
             this.BackBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.ClrDataBtn = new System.Windows.Forms.Button();
+            this.ClearDataBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BackBtn
@@ -48,6 +48,7 @@
             this.BackBtn.TabIndex = 33;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = false;
+            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // label1
             // 
@@ -67,27 +68,29 @@
             this.ExitBtn.FlatAppearance.BorderSize = 2;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(271, 24);
+            this.ExitBtn.Location = new System.Drawing.Point(275, 24);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(59, 33);
             this.ExitBtn.TabIndex = 31;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
+            this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // ClrDataBtn
+            // ClearDataBtn
             // 
-            this.ClrDataBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClrDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ClrDataBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.ClrDataBtn.FlatAppearance.BorderSize = 2;
-            this.ClrDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ClrDataBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ClrDataBtn.Location = new System.Drawing.Point(111, 185);
-            this.ClrDataBtn.Name = "ClrDataBtn";
-            this.ClrDataBtn.Size = new System.Drawing.Size(119, 33);
-            this.ClrDataBtn.TabIndex = 30;
-            this.ClrDataBtn.Text = "Clear Data";
-            this.ClrDataBtn.UseVisualStyleBackColor = false;
+            this.ClearDataBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClearDataBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ClearDataBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.ClearDataBtn.FlatAppearance.BorderSize = 2;
+            this.ClearDataBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ClearDataBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ClearDataBtn.Location = new System.Drawing.Point(111, 185);
+            this.ClearDataBtn.Name = "ClearDataBtn";
+            this.ClearDataBtn.Size = new System.Drawing.Size(119, 33);
+            this.ClearDataBtn.TabIndex = 30;
+            this.ClearDataBtn.Text = "Clear Data";
+            this.ClearDataBtn.UseVisualStyleBackColor = false;
+            this.ClearDataBtn.Click += new System.EventHandler(this.ClearDataBtn_Click);
             // 
             // Settings
             // 
@@ -99,7 +102,7 @@
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.ClrDataBtn);
+            this.Controls.Add(this.ClearDataBtn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Settings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -114,6 +117,6 @@
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Button ClrDataBtn;
+        private System.Windows.Forms.Button ClearDataBtn;
     }
 }

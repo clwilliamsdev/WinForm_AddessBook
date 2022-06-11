@@ -18,7 +18,7 @@ namespace AddessBook_V1
             InitializeComponent();
         }
 
-        private void ClrDataBtn_Click(object sender, EventArgs e)
+        private void ClearDataBtn_Click(object sender, EventArgs e)
         {
             DialogResult warning = MessageBox.Show("This will delete all data in the table. Do you want to proceed?", "Delete Table Data",
                 MessageBoxButtons.YesNo);
@@ -45,7 +45,5 @@ namespace AddessBook_V1
             AddressBook addressBook = new AddressBook();
             addressBook.ShowDialog();
         }
-
-       
     }
 }

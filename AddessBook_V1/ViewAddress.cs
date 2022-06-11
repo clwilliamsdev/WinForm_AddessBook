@@ -13,6 +13,7 @@ namespace AddessBook_V1
 {
     public partial class ViewAddress : Form
     {
+        public static int UpdateID;
         public ViewAddress()
         {
             InitializeComponent();
@@ -22,7 +23,7 @@ namespace AddessBook_V1
         {
             SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
             conn.Open();
-            SQLiteCommand command = new SQLiteCommand("SELECT FirstName, LastName, Address1, Address2, City, State, Zipcode, PhoneNumber " +
+            SQLiteCommand command = new SQLiteCommand("SELECT FirstName, LastName, Address1, Address2, City, State, Zipcode, PhoneNumber, ID " +
                 "FROM AddressBook WHERE FirstName = @FirstName AND LastName = @LastName", conn);
 
             command.Parameters.AddWithValue("FirstName", AddressBook.fName);
@@ -40,6 +41,9 @@ namespace AddessBook_V1
                     StateInput.Text = reader.GetString(5);
                     ZipInput.Text = reader.GetString(6);
                     PhoneInput.Text = reader.GetString(7);
+                    UpdateID = reader.GetInt32(8);
+
+                    Console.WriteLine(UpdateID);
                 }
             }
             else
@@ -62,7 +66,7 @@ namespace AddessBook_V1
             SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
             conn.Open();
             string update = "UPDATE AddressBook SET FirstName = @FirstName, LastName = @LastName, Address1 = @Address1, Address2 = @Address2," +
-                " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE LastName = @lName AND FirstName = @fName";
+                " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE ID = @UpdateID";
             SQLiteCommand command = new SQLiteCommand(update, conn);
             command.Parameters.AddWithValue("FirstName", FirstNameInput.Text);
             command.Parameters.AddWithValue("LastName", LastNameInput.Text);
@@ -72,8 +76,7 @@ namespace AddessBook_V1
             command.Parameters.AddWithValue("State", StateInput.Text);
             command.Parameters.AddWithValue("Zipcode", ZipInput.Text);
             command.Parameters.AddWithValue("PhoneNumber", PhoneInput.Text);
-            command.Parameters.AddWithValue("lName", AddressBook.lName);
-            command.Parameters.AddWithValue("fName", AddressBook.fName);
+            command.Parameters.AddWithValue("UpdateID", UpdateID);
             command.ExecuteNonQuery();
             conn.Close();
 
