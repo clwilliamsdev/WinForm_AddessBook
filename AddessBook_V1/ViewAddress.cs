@@ -63,13 +63,17 @@ namespace AddessBook_V1
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
+            NewAddress newAddress = new NewAddress();
+            string firstName = newAddress.FirstLetterToUpper(FirstNameInput.Text);
+            string lastName = newAddress.FirstLetterToUpper(LastNameInput.Text);
+
             SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
             conn.Open();
             string update = "UPDATE AddressBook SET FirstName = @FirstName, LastName = @LastName, Address1 = @Address1, Address2 = @Address2," +
                 " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE ID = @UpdateID";
             SQLiteCommand command = new SQLiteCommand(update, conn);
-            command.Parameters.AddWithValue("FirstName", FirstNameInput.Text);
-            command.Parameters.AddWithValue("LastName", LastNameInput.Text);
+            command.Parameters.AddWithValue("FirstName", firstName);
+            command.Parameters.AddWithValue("LastName", lastName);
             command.Parameters.AddWithValue("Address1", Address1Input.Text);
             command.Parameters.AddWithValue("Address2", Address2Input.Text);
             command.Parameters.AddWithValue("City", CityInput.Text);

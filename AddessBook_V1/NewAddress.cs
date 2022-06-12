@@ -20,10 +20,14 @@ namespace AddessBook_V1
 
         private void SaveBtn_Click(object sender, EventArgs e)
         {
+            string firstName = FirstLetterToUpper(FirstNameInput.Text);
+            string lastName = FirstLetterToUpper(LastNameInput.Text);
+
+
             SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
             conn.Open();
             string save = "INSERT INTO AddressBook(FirstName, LastName, Address1, Address2, City," +
-                " State, Zipcode, PhoneNumber)" + "Values('" + FirstNameInput.Text + "', '" + LastNameInput.Text + "','" + Address1Input.Text + "'," +
+                " State, Zipcode, PhoneNumber)" + "Values('" + firstName + "', '" + lastName + "','" + Address1Input.Text + "'," +
                 "  '" + Address2Input.Text + "', '" + CityInput.Text + "', '" + StateInput.Text + "', '" + ZipInput.Text + "', '" + PhoneInput.Text + "')";
 
             SQLiteCommand cmd = new SQLiteCommand(save, conn);
@@ -62,5 +66,17 @@ namespace AddessBook_V1
             AddressBook addressBook = new AddressBook();
             addressBook.ShowDialog();
         }
+
+        public string FirstLetterToUpper(string str)
+        {
+            if (str == null)
+                return null;
+
+            if (str.Length > 1)
+                return char.ToUpper(str[0]) + str.Substring(1);
+
+            return str.ToUpper();
+        }
+
     }
 }

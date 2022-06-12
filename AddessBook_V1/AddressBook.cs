@@ -30,9 +30,7 @@ namespace AddessBook_V1
 
             SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
             conn.Open();
-            string load = "SELECT LastName, FirstName" +
-                " FROM AddressBook";
-            //SQLiteCommand command = new SQLiteCommand(load, conn);
+            string load = "SELECT LastName, FirstName FROM AddressBook ORDER BY LastName ASC, FirstName ASC";
             SQLiteDataAdapter da = new SQLiteDataAdapter(load, conn);
             DataSet ds = new DataSet();
             ds.Reset();
