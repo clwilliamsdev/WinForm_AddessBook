@@ -14,16 +14,17 @@ namespace AddessBook_V1
 {
     public partial class AddressBook : Form
     {
-        public static string dbDetail;
         public static int position;
         public static string lName;
         public static string fName;
+        public bool cellClick = false;
 
         public AddressBook()
         {
             InitializeComponent();
+             
 
-        }
+    }
         public void Main_Load(object sender, EventArgs e)
         {
             Database db = new Database();
@@ -44,6 +45,8 @@ namespace AddessBook_V1
             column.Width = 72;
             DataGridViewColumn column1 = AddressListDisplay.Columns[1];
             column.Width = 72;
+
+            
         }
 
    
@@ -58,9 +61,12 @@ namespace AddessBook_V1
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            ViewAddress viewAddress = new ViewAddress();
-            viewAddress.ShowDialog();
+            if (!cellClick == false)
+            {
+                this.Hide();
+                ViewAddress viewAddress = new ViewAddress();
+                viewAddress.ShowDialog();
+            }
         }
 
         private void DeleteBtn_Click(object sender, EventArgs e)
@@ -88,6 +94,7 @@ namespace AddessBook_V1
             Console.WriteLine(position);
             Console.WriteLine(lName);
             Console.WriteLine(fName);
+            cellClick = true;
         }
     }
 }
