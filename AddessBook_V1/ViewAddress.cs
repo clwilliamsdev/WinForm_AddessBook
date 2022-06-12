@@ -114,6 +114,31 @@ namespace AddessBook_V1
             Application.Exit();
         }
 
-       
+        
+private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            DialogResult warning = MessageBox.Show("This will delete this file. Do you want to proceed?", "Delete file",
+              MessageBoxButtons.YesNo);
+            if (warning == DialogResult.Yes)
+            {
+                SQLiteConnection conn1;
+                conn1 = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
+                conn1.Open();
+                string delete = "DELETE FROM AddressBook WHERE ID = @UpdateID";
+                SQLiteCommand command1 = new SQLiteCommand(delete, conn1);
+                command1.Parameters.AddWithValue("UpdateID", UpdateID);
+                command1.ExecuteNonQuery();
+                conn1.Close();
+
+                Console.WriteLine("File Deleted");
+                MessageBox.Show("File has been Deleted");
+
+                this.Hide();
+                AddressBook addressBook = new AddressBook();
+                addressBook.ShowDialog();
+            }
     }
+
+
+}
 }

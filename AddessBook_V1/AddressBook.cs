@@ -31,13 +31,14 @@ namespace AddessBook_V1
 
             SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
             conn.Open();
-            string load = "SELECT LastName, FirstName FROM AddressBook ORDER BY LastName ASC, FirstName ASC";
+            string load = "SELECT LastName, FirstName, ID FROM AddressBook ORDER BY LastName ASC, FirstName ASC";
             SQLiteDataAdapter da = new SQLiteDataAdapter(load, conn);
             DataSet ds = new DataSet();
             ds.Reset();
             da.Fill(ds);
             DataTable dt = ds.Tables[0];
             AddressListDisplay.DataSource = dt;
+
             conn.Close();
 
             
@@ -61,19 +62,14 @@ namespace AddessBook_V1
 
         private void ViewBtn_Click(object sender, EventArgs e)
         {
-            if (!cellClick == false)
+            if (cellClick == true)
             {
                 this.Hide();
                 ViewAddress viewAddress = new ViewAddress();
                 viewAddress.ShowDialog();
             }
         }
-
-        private void DeleteBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void SettingsBtn_Click(object sender, EventArgs e)
         {
             this.Hide();

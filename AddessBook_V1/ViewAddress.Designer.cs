@@ -49,6 +49,7 @@
             this.BackBtn = new System.Windows.Forms.Button();
             this.FirstNameInput = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.DeleteBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // UpdateBtn
@@ -238,7 +239,7 @@
             this.BackBtn.FlatAppearance.BorderSize = 2;
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackBtn.Location = new System.Drawing.Point(212, 377);
+            this.BackBtn.Location = new System.Drawing.Point(137, 377);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 33);
             this.BackBtn.TabIndex = 10;
@@ -264,6 +265,22 @@
             this.label11.TabIndex = 45;
             this.label11.Text = "First Name";
             // 
+            // DeleteBtn
+            // 
+            this.DeleteBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.DeleteBtn.FlatAppearance.BorderSize = 2;
+            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.DeleteBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DeleteBtn.Location = new System.Drawing.Point(235, 377);
+            this.DeleteBtn.Name = "DeleteBtn";
+            this.DeleteBtn.Size = new System.Drawing.Size(75, 33);
+            this.DeleteBtn.TabIndex = 64;
+            this.DeleteBtn.Text = "Delete";
+            this.DeleteBtn.UseVisualStyleBackColor = false;
+            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
             // ViewAddress
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,6 +288,7 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(338, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.PhoneInput);
             this.Controls.Add(this.label8);
@@ -324,5 +342,6 @@
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.TextBox FirstNameInput;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button DeleteBtn;
     }
 }

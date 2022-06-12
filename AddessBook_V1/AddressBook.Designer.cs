@@ -32,7 +32,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.SettingsBtn = new System.Windows.Forms.Button();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.DeleteBtn = new System.Windows.Forms.Button();
             this.ViewBtn = new System.Windows.Forms.Button();
             this.NewBtn = new System.Windows.Forms.Button();
             this.AddressLbl = new System.Windows.Forms.Label();
@@ -48,7 +47,7 @@
             this.SettingsBtn.FlatAppearance.BorderSize = 2;
             this.SettingsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SettingsBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SettingsBtn.Location = new System.Drawing.Point(218, 345);
+            this.SettingsBtn.Location = new System.Drawing.Point(227, 345);
             this.SettingsBtn.Name = "SettingsBtn";
             this.SettingsBtn.Size = new System.Drawing.Size(75, 33);
             this.SettingsBtn.TabIndex = 30;
@@ -72,22 +71,6 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // DeleteBtn
-            // 
-            this.DeleteBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.DeleteBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.DeleteBtn.FlatAppearance.BorderSize = 2;
-            this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DeleteBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.Location = new System.Drawing.Point(218, 272);
-            this.DeleteBtn.Name = "DeleteBtn";
-            this.DeleteBtn.Size = new System.Drawing.Size(75, 33);
-            this.DeleteBtn.TabIndex = 28;
-            this.DeleteBtn.Text = "Delete";
-            this.DeleteBtn.UseVisualStyleBackColor = false;
-            this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
-            // 
             // ViewBtn
             // 
             this.ViewBtn.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
@@ -96,7 +79,7 @@
             this.ViewBtn.FlatAppearance.BorderSize = 2;
             this.ViewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ViewBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewBtn.Location = new System.Drawing.Point(218, 199);
+            this.ViewBtn.Location = new System.Drawing.Point(227, 237);
             this.ViewBtn.Name = "ViewBtn";
             this.ViewBtn.Size = new System.Drawing.Size(75, 33);
             this.ViewBtn.TabIndex = 27;
@@ -112,7 +95,7 @@
             this.NewBtn.FlatAppearance.BorderSize = 2;
             this.NewBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.NewBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewBtn.Location = new System.Drawing.Point(218, 126);
+            this.NewBtn.Location = new System.Drawing.Point(227, 124);
             this.NewBtn.Name = "NewBtn";
             this.NewBtn.Size = new System.Drawing.Size(75, 33);
             this.NewBtn.TabIndex = 26;
@@ -124,7 +107,7 @@
             // 
             this.AddressLbl.AutoSize = true;
             this.AddressLbl.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AddressLbl.Location = new System.Drawing.Point(23, 74);
+            this.AddressLbl.Location = new System.Drawing.Point(51, 74);
             this.AddressLbl.Name = "AddressLbl";
             this.AddressLbl.Size = new System.Drawing.Size(104, 23);
             this.AddressLbl.TabIndex = 25;
@@ -156,7 +139,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.AddressListDisplay.DefaultCellStyle = dataGridViewCellStyle2;
             this.AddressListDisplay.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.AddressListDisplay.Location = new System.Drawing.Point(27, 126);
+            this.AddressListDisplay.Location = new System.Drawing.Point(25, 126);
             this.AddressListDisplay.MultiSelect = false;
             this.AddressListDisplay.Name = "AddressListDisplay";
             this.AddressListDisplay.ReadOnly = true;
@@ -180,7 +163,6 @@
             this.ControlBox = false;
             this.Controls.Add(this.SettingsBtn);
             this.Controls.Add(this.ExitBtn);
-            this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.ViewBtn);
             this.Controls.Add(this.NewBtn);
             this.Controls.Add(this.AddressLbl);
@@ -201,7 +183,6 @@
 
         private System.Windows.Forms.Button SettingsBtn;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.Button DeleteBtn;
         private System.Windows.Forms.Button ViewBtn;
         private System.Windows.Forms.Button NewBtn;
         private System.Windows.Forms.Label AddressLbl;
