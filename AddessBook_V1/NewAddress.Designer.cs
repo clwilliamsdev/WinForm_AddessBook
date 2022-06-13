@@ -43,11 +43,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.StateInput = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.ZipInput = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.PhoneInput = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.PhoneInput = new System.Windows.Forms.MaskedTextBox();
+            this.ZipInput = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // ExitBtn
@@ -58,9 +58,9 @@
             this.ExitBtn.FlatAppearance.BorderSize = 2;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(273, 41);
+            this.ExitBtn.Location = new System.Drawing.Point(251, 12);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(48, 33);
+            this.ExitBtn.Size = new System.Drawing.Size(75, 33);
             this.ExitBtn.TabIndex = 11;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
@@ -74,7 +74,7 @@
             this.BackBtn.FlatAppearance.BorderSize = 2;
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackBtn.Location = new System.Drawing.Point(215, 377);
+            this.BackBtn.Location = new System.Drawing.Point(12, 12);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 33);
             this.BackBtn.TabIndex = 10;
@@ -108,7 +108,7 @@
             this.SaveBtn.FlatAppearance.BorderSize = 2;
             this.SaveBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SaveBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SaveBtn.Location = new System.Drawing.Point(39, 377);
+            this.SaveBtn.Location = new System.Drawing.Point(132, 377);
             this.SaveBtn.Name = "SaveBtn";
             this.SaveBtn.Size = new System.Drawing.Size(75, 33);
             this.SaveBtn.TabIndex = 9;
@@ -206,14 +206,6 @@
             this.label6.TabIndex = 37;
             this.label6.Text = "State";
             // 
-            // ZipInput
-            // 
-            this.ZipInput.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.ZipInput.Location = new System.Drawing.Point(238, 279);
-            this.ZipInput.Name = "ZipInput";
-            this.ZipInput.Size = new System.Drawing.Size(83, 22);
-            this.ZipInput.TabIndex = 7;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -223,14 +215,6 @@
             this.label7.Size = new System.Drawing.Size(38, 23);
             this.label7.TabIndex = 39;
             this.label7.Text = "Zip";
-            // 
-            // PhoneInput
-            // 
-            this.PhoneInput.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.PhoneInput.Location = new System.Drawing.Point(120, 308);
-            this.PhoneInput.Name = "PhoneInput";
-            this.PhoneInput.Size = new System.Drawing.Size(201, 22);
-            this.PhoneInput.TabIndex = 8;
             // 
             // label8
             // 
@@ -246,11 +230,27 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(46, 51);
+            this.label9.Location = new System.Drawing.Point(80, 80);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(179, 23);
             this.label9.TabIndex = 43;
             this.label9.Text = "New Address Entry";
+            // 
+            // PhoneInput
+            // 
+            this.PhoneInput.Location = new System.Drawing.Point(120, 311);
+            this.PhoneInput.Mask = "(999) 000-0000";
+            this.PhoneInput.Name = "PhoneInput";
+            this.PhoneInput.Size = new System.Drawing.Size(201, 20);
+            this.PhoneInput.TabIndex = 8;
+            // 
+            // ZipInput
+            // 
+            this.ZipInput.Location = new System.Drawing.Point(238, 282);
+            this.ZipInput.Mask = "00000-9999";
+            this.ZipInput.Name = "ZipInput";
+            this.ZipInput.Size = new System.Drawing.Size(83, 20);
+            this.ZipInput.TabIndex = 7;
             // 
             // NewAddress
             // 
@@ -259,10 +259,10 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(338, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.PhoneInput);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.ZipInput);
+            this.Controls.Add(this.PhoneInput);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.StateInput);
             this.Controls.Add(this.label6);
@@ -305,10 +305,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox StateInput;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox ZipInput;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox PhoneInput;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.MaskedTextBox PhoneInput;
+        private System.Windows.Forms.MaskedTextBox ZipInput;
     }
 }

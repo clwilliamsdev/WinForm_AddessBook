@@ -63,7 +63,7 @@
             this.ExitBtn.FlatAppearance.BorderSize = 2;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(271, 40);
+            this.ExitBtn.Location = new System.Drawing.Point(278, 12);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(48, 33);
             this.ExitBtn.TabIndex = 29;

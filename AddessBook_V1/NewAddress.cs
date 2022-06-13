@@ -16,6 +16,7 @@ namespace AddessBook_V1
         public NewAddress()
         {
             InitializeComponent();
+            
         }
 
         private void SaveBtn_Click(object sender, EventArgs e)
@@ -40,19 +41,6 @@ namespace AddessBook_V1
             this.Hide();
             AddressBook addressBook = new AddressBook();
             addressBook.ShowDialog();
-
-
-
-            Libraries.AddressModel addressModel = new Libraries.AddressModel();
-            addressModel.FirstName = FirstNameInput.Text;
-            addressModel.LastName = LastNameInput.Text;
-            addressModel.Address1 = Address1Input.Text;
-            addressModel.Address2 = Address2Input.Text;
-            addressModel.City = CityInput.Text;
-            addressModel.State = StateInput.Text;
-            addressModel.Zipcode = ZipInput.Text;
-            addressModel.PhoneNumber = PhoneInput.Text;
-
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -76,6 +64,20 @@ namespace AddessBook_V1
                 return char.ToUpper(str[0]) + str.Substring(1);
 
             return str.ToUpper();
+        }
+
+        public void StateCreator()
+        {
+
+            List<string> states = new List<string>();
+            states.Add("AL");
+            states.Add("AK");
+            states.Add("AZ");
+            states.Add("AR");
+            states.Add("CA");
+            states.Add("CO");
+            states.Add("CT");
+            states.Add("DE");
         }
 
     }

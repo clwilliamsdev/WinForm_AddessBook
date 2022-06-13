@@ -29,11 +29,8 @@
         private void InitializeComponent()
         {
             this.UpdateBtn = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.PhoneInput = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.ZipInput = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.StateInput = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -50,6 +47,8 @@
             this.FirstNameInput = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.DeleteBtn = new System.Windows.Forms.Button();
+            this.PhoneInput = new System.Windows.Forms.MaskedTextBox();
+            this.ZipInput = new System.Windows.Forms.MaskedTextBox();
             this.SuspendLayout();
             // 
             // UpdateBtn
@@ -60,7 +59,7 @@
             this.UpdateBtn.FlatAppearance.BorderSize = 2;
             this.UpdateBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.UpdateBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UpdateBtn.Location = new System.Drawing.Point(34, 377);
+            this.UpdateBtn.Location = new System.Drawing.Point(12, 377);
             this.UpdateBtn.Name = "UpdateBtn";
             this.UpdateBtn.Size = new System.Drawing.Size(75, 33);
             this.UpdateBtn.TabIndex = 9;
@@ -68,34 +67,16 @@
             this.UpdateBtn.UseVisualStyleBackColor = false;
             this.UpdateBtn.Click += new System.EventHandler(this.UpdateBtn_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(272, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 23);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Title";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.CornflowerBlue;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(65, 51);
+            this.label9.Location = new System.Drawing.Point(102, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(134, 23);
             this.label9.TabIndex = 63;
             this.label9.Text = "View Address";
-            // 
-            // PhoneInput
-            // 
-            this.PhoneInput.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.PhoneInput.Location = new System.Drawing.Point(117, 308);
-            this.PhoneInput.Name = "PhoneInput";
-            this.PhoneInput.Size = new System.Drawing.Size(201, 22);
-            this.PhoneInput.TabIndex = 8;
             // 
             // label8
             // 
@@ -107,19 +88,11 @@
             this.label8.TabIndex = 61;
             this.label8.Text = "Phone #";
             // 
-            // ZipInput
-            // 
-            this.ZipInput.Font = new System.Drawing.Font("Century Gothic", 9F);
-            this.ZipInput.Location = new System.Drawing.Point(235, 279);
-            this.ZipInput.Name = "ZipInput";
-            this.ZipInput.Size = new System.Drawing.Size(83, 22);
-            this.ZipInput.TabIndex = 7;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(161, 279);
+            this.label7.Location = new System.Drawing.Point(174, 280);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(38, 23);
             this.label7.TabIndex = 59;
@@ -223,9 +196,9 @@
             this.ExitBtn.FlatAppearance.BorderSize = 2;
             this.ExitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ExitBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ExitBtn.Location = new System.Drawing.Point(270, 41);
+            this.ExitBtn.Location = new System.Drawing.Point(251, 12);
             this.ExitBtn.Name = "ExitBtn";
-            this.ExitBtn.Size = new System.Drawing.Size(48, 33);
+            this.ExitBtn.Size = new System.Drawing.Size(75, 33);
             this.ExitBtn.TabIndex = 11;
             this.ExitBtn.Text = "Exit";
             this.ExitBtn.UseVisualStyleBackColor = false;
@@ -239,7 +212,7 @@
             this.BackBtn.FlatAppearance.BorderSize = 2;
             this.BackBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackBtn.Location = new System.Drawing.Point(137, 377);
+            this.BackBtn.Location = new System.Drawing.Point(12, 12);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 33);
             this.BackBtn.TabIndex = 10;
@@ -273,13 +246,29 @@
             this.DeleteBtn.FlatAppearance.BorderSize = 2;
             this.DeleteBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.DeleteBtn.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DeleteBtn.Location = new System.Drawing.Point(235, 377);
+            this.DeleteBtn.Location = new System.Drawing.Point(251, 377);
             this.DeleteBtn.Name = "DeleteBtn";
             this.DeleteBtn.Size = new System.Drawing.Size(75, 33);
             this.DeleteBtn.TabIndex = 64;
             this.DeleteBtn.Text = "Delete";
             this.DeleteBtn.UseVisualStyleBackColor = false;
             this.DeleteBtn.Click += new System.EventHandler(this.DeleteBtn_Click);
+            // 
+            // PhoneInput
+            // 
+            this.PhoneInput.Location = new System.Drawing.Point(117, 311);
+            this.PhoneInput.Mask = "(999) 000-0000";
+            this.PhoneInput.Name = "PhoneInput";
+            this.PhoneInput.Size = new System.Drawing.Size(201, 20);
+            this.PhoneInput.TabIndex = 8;
+            // 
+            // ZipInput
+            // 
+            this.ZipInput.Location = new System.Drawing.Point(235, 282);
+            this.ZipInput.Mask = "00000-9999";
+            this.ZipInput.Name = "ZipInput";
+            this.ZipInput.Size = new System.Drawing.Size(83, 20);
+            this.ZipInput.TabIndex = 7;
             // 
             // ViewAddress
             // 
@@ -288,11 +277,11 @@
             this.BackColor = System.Drawing.Color.CornflowerBlue;
             this.ClientSize = new System.Drawing.Size(338, 450);
             this.ControlBox = false;
+            this.Controls.Add(this.ZipInput);
+            this.Controls.Add(this.PhoneInput);
             this.Controls.Add(this.DeleteBtn);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.PhoneInput);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.ZipInput);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.StateInput);
             this.Controls.Add(this.label6);
@@ -309,7 +298,6 @@
             this.Controls.Add(this.FirstNameInput);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.UpdateBtn);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "ViewAddress";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -322,11 +310,8 @@
 
         #endregion
         private System.Windows.Forms.Button UpdateBtn;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox PhoneInput;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox ZipInput;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox StateInput;
         private System.Windows.Forms.Label label6;
@@ -343,5 +328,7 @@
         private System.Windows.Forms.TextBox FirstNameInput;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button DeleteBtn;
+        private System.Windows.Forms.MaskedTextBox PhoneInput;
+        private System.Windows.Forms.MaskedTextBox ZipInput;
     }
 }

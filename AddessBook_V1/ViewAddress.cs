@@ -63,43 +63,31 @@ namespace AddessBook_V1
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            NewAddress newAddress = new NewAddress();
-            string firstName = newAddress.FirstLetterToUpper(FirstNameInput.Text);
-            string lastName = newAddress.FirstLetterToUpper(LastNameInput.Text);
+            DialogResult warning = MessageBox.Show("This will change the original file. Do you want to proceed?", "Update file",
+              MessageBoxButtons.YesNo);
+            if (warning == DialogResult.Yes)
+            {
+                NewAddress newAddress = new NewAddress();
+                string firstName = newAddress.FirstLetterToUpper(FirstNameInput.Text);
+                string lastName = newAddress.FirstLetterToUpper(LastNameInput.Text);
 
-            SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
-            conn.Open();
-            string update = "UPDATE AddressBook SET FirstName = @FirstName, LastName = @LastName, Address1 = @Address1, Address2 = @Address2," +
-                " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE ID = @UpdateID";
-            SQLiteCommand command = new SQLiteCommand(update, conn);
-            command.Parameters.AddWithValue("FirstName", firstName);
-            command.Parameters.AddWithValue("LastName", lastName);
-            command.Parameters.AddWithValue("Address1", Address1Input.Text);
-            command.Parameters.AddWithValue("Address2", Address2Input.Text);
-            command.Parameters.AddWithValue("City", CityInput.Text);
-            command.Parameters.AddWithValue("State", StateInput.Text);
-            command.Parameters.AddWithValue("Zipcode", ZipInput.Text);
-            command.Parameters.AddWithValue("PhoneNumber", PhoneInput.Text);
-            command.Parameters.AddWithValue("UpdateID", UpdateID);
-            command.ExecuteNonQuery();
-            conn.Close();
-
-
-            //string save = "INSERT INTO AddressBook(FirstName, LastName, Address1, Address2, City," +
-            //    " State, Zipcode, PhoneNumber)" + "Values('" + FirstNameInput.Text + "', '" + LastNameInput.Text + "','" + Address1Input.Text + "'," +
-            //    "  '" + Address2Input.Text + "', '" + CityInput.Text + "', '" + StateInput.Text + "', '" + ZipInput.Text + "', '" + PhoneInput.Text + "')";
-
-            //Libraries.AddressModel addressModel = new Libraries.AddressModel();
-            //addressModel.FirstName = FirstNameInput.Text;
-            //addressModel.LastName = LastNameInput.Text;
-            //addressModel.Address1 = Address1Input.Text;
-            //addressModel.Address2 = Address2Input.Text;
-            //addressModel.City = CityInput.Text;
-            //addressModel.State = StateInput.Text;
-            //addressModel.Zipcode = ZipInput.Text;
-            //addressModel.PhoneNumber = PhoneInput.Text;
-
-
+                SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
+                conn.Open();
+                string update = "UPDATE AddressBook SET FirstName = @FirstName, LastName = @LastName, Address1 = @Address1, Address2 = @Address2," +
+                    " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE ID = @UpdateID";
+                SQLiteCommand command = new SQLiteCommand(update, conn);
+                command.Parameters.AddWithValue("FirstName", firstName);
+                command.Parameters.AddWithValue("LastName", lastName);
+                command.Parameters.AddWithValue("Address1", Address1Input.Text);
+                command.Parameters.AddWithValue("Address2", Address2Input.Text);
+                command.Parameters.AddWithValue("City", CityInput.Text);
+                command.Parameters.AddWithValue("State", StateInput.Text);
+                command.Parameters.AddWithValue("Zipcode", ZipInput.Text);
+                command.Parameters.AddWithValue("PhoneNumber", PhoneInput.Text);
+                command.Parameters.AddWithValue("UpdateID", UpdateID);
+                command.ExecuteNonQuery();
+                conn.Close();
+            }
 
             Console.WriteLine("Entry Saved");
             MessageBox.Show("Entry has been saved");
