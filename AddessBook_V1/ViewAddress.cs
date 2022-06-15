@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AddessBook_V1
@@ -63,38 +56,46 @@ namespace AddessBook_V1
 
         private void UpdateBtn_Click(object sender, EventArgs e)
         {
-            DialogResult warning = MessageBox.Show("This will change the original file. Do you want to proceed?", "Update file",
-              MessageBoxButtons.YesNo);
-            if (warning == DialogResult.Yes)
+            if ((!String.IsNullOrEmpty(FirstNameInput.Text)) && (!String.IsNullOrEmpty(LastNameInput.Text)))
             {
-                NewAddress newAddress = new NewAddress();
-                string firstName = newAddress.FirstLetterToUpper(FirstNameInput.Text);
-                string lastName = newAddress.FirstLetterToUpper(LastNameInput.Text);
+                DialogResult warning = MessageBox.Show("This will change the original file. Do you want to proceed?", "Update file",
+              MessageBoxButtons.YesNo);
+                if (warning == DialogResult.Yes)
+                {
+                    NewAddress newAddress = new NewAddress();
+                    string firstName = newAddress.FirstLetterToUpper(FirstNameInput.Text);
+                    string lastName = newAddress.FirstLetterToUpper(LastNameInput.Text);
 
-                SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
-                conn.Open();
-                string update = "UPDATE AddressBook SET FirstName = @FirstName, LastName = @LastName, Address1 = @Address1, Address2 = @Address2," +
-                    " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE ID = @UpdateID";
-                SQLiteCommand command = new SQLiteCommand(update, conn);
-                command.Parameters.AddWithValue("FirstName", firstName);
-                command.Parameters.AddWithValue("LastName", lastName);
-                command.Parameters.AddWithValue("Address1", Address1Input.Text);
-                command.Parameters.AddWithValue("Address2", Address2Input.Text);
-                command.Parameters.AddWithValue("City", CityInput.Text);
-                command.Parameters.AddWithValue("State", StateInput.Text);
-                command.Parameters.AddWithValue("Zipcode", ZipInput.Text);
-                command.Parameters.AddWithValue("PhoneNumber", PhoneInput.Text);
-                command.Parameters.AddWithValue("UpdateID", UpdateID);
-                command.ExecuteNonQuery();
-                conn.Close();
+                    SQLiteConnection conn = new SQLiteConnection("Data Source=./AddressBookDB.sqlite3");
+                    conn.Open();
+                    string update = "UPDATE AddressBook SET FirstName = @FirstName, LastName = @LastName, Address1 = @Address1, Address2 = @Address2," +
+                        " City = @City, State = @State, Zipcode = @Zipcode, PhoneNumber = @PhoneNumber WHERE ID = @UpdateID";
+                    SQLiteCommand command = new SQLiteCommand(update, conn);
+                    command.Parameters.AddWithValue("FirstName", firstName);
+                    command.Parameters.AddWithValue("LastName", lastName);
+                    command.Parameters.AddWithValue("Address1", Address1Input.Text);
+                    command.Parameters.AddWithValue("Address2", Address2Input.Text);
+                    command.Parameters.AddWithValue("City", CityInput.Text);
+                    command.Parameters.AddWithValue("State", StateInput.Text);
+                    command.Parameters.AddWithValue("Zipcode", ZipInput.Text);
+                    command.Parameters.AddWithValue("PhoneNumber", PhoneInput.Text);
+                    command.Parameters.AddWithValue("UpdateID", UpdateID);
+                    command.ExecuteNonQuery();
+                    conn.Close();
+
+                    Console.WriteLine("Entry Saved");
+                    MessageBox.Show("Entry has been saved");
+
+                    this.Hide();
+                    AddressBook addressBook = new AddressBook();
+                    addressBook.ShowDialog();
+                }
+
             }
-
-            Console.WriteLine("Entry Saved");
-            MessageBox.Show("Entry has been saved");
-
-            this.Hide();
-            AddressBook addressBook = new AddressBook();
-            addressBook.ShowDialog();
+            else
+            {
+                MessageBox.Show("First and last names are required.");
+            }
         }
 
         private void ExitBtn_Click(object sender, EventArgs e)
@@ -102,8 +103,8 @@ namespace AddessBook_V1
             Application.Exit();
         }
 
-        
-private void DeleteBtn_Click(object sender, EventArgs e)
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
         {
             DialogResult warning = MessageBox.Show("This will delete this file. Do you want to proceed?", "Delete file",
               MessageBoxButtons.YesNo);
@@ -125,8 +126,8 @@ private void DeleteBtn_Click(object sender, EventArgs e)
                 AddressBook addressBook = new AddressBook();
                 addressBook.ShowDialog();
             }
+        }
+
+
     }
-
-
-}
 }
